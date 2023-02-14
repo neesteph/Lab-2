@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ontario's Best Wedding Venues</title>
+
+    <!-- The following two lines are from the Map CDN that installs the Mapbox GL JS library -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- This links the html file to the CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div>
+        <br>
+        <h1 class="title">Ontario's Best Wedding Venues</h1> <!-- This title will be styled according to the .title class in CSS -->
+
+        <img class="introimg" src="https://thumbs.dreamstime.com/b/large-pink-cream-cake-three-tiers-ornate-decorated-wedding-cake-isolated-white-background-logo-icon-large-pink-208237759.jpg">
+
+        <div class="intro"> <!-- This section will be styled according to the .intro class in CSS -->
+            <h2>Looking for the perfect location to get married at?</h2>
+            <h3>
+                Here is a list of some of the best wedding venues in Ontario, 
+                according to <a target="_blank" href="https://www.bellamyloft.com/wedding-venues-in-toronto/">Bellamy Loft</a>!
+                <!-- Hyperlink that opens in a new tab -->
+            </h3>
+            <p>
+                The GeoJSON file of all the venues can be found <a target="_blank" href="mymappeddata.geojson">here</a>.
+                <!-- Hyperlink that opens in a new tab -->
+            </p>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- The following two lines are Mapbox plugins for the navigation feature of the map -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" type="text/css">
+
+
+    <div class="main"> <!-- This is the map container, which will be styled according to the .main class in CSS -->
+        <div id='map' class='map'> <!-- The map specifically will be styled according to the .map class in CSS -->
+        </div>
+        <div class="main-left"> <!-- This list of venues will be styled according to the .main-left class in CSS -->
+            <h2>List of Venues:</h2>
+            <ul> <!-- This is an unordered, bullet list of all the wedding weddings, which are also hyperlinks that open in a new tab -->
+                <li> <a href="https://agakhanmuseum.org/private-events/weddings.html">Aga Khan Museum</a> </li>
+                <li> <a target="_blank" href="https://www.aubergedupommier.com/private-dining/">Auberge du Pommier</a> </li>
+                <li> <a target="_blank" href="https://www.canoerestaurant.com/weddings/">Canoe Restaurant & Bar</a> </li>
+                <li> <a target="_blank" href="https://casaloma.ca/weddings-socialevents/">Casa Loma</a> </li>
+                <li> <a target="_blank" href="https://www.eventsdeercreek.com/">Deer Creek Golf Club</a> </li>
+                <li> <a target="_blank" href="https://www.fairmont.com/weddings/">Fairmont Royal York</a> </li>
+                <li> <a target="_blank" href="https://www.graydonhall.com/events/weddings/">Graydon Hall Manor</a> </li>
+                <li> <a target="_blank" href="https://www.junctioncraft.com/events">Junction Craft Brewery</a> </li>
+                <li> <a target="_blank" href="https://knox.utoronto.ca/facility-rental/#section-weddings-&-photography">Knox College</a> </li>
+                <li> <a target="_blank" href="https://kortright.bypeterandpauls.com/">Kortright Centre for Conservation</a> </li>
+                <li> <a target="_blank" href="https://liunastation.com/liuna-station/weddings/">Liuna Gardens</a> </li>
+                <li> <a target="_blank" href="https://madisongreenhouse.ca/function/wedding/">Madison Greenhouse</a> </li>
+                <li> <a target="_blank" href="https://paradisebanquethalls.com/">Paradise Banquet Hall</a> </li>
+                <li> <a target="_blank" href="https://royalashburngolfclub.com/weddings/">Royal Ashburn Golf Club</a> </li>
+                <li> <a target="_blank" href="https://www.toronto.ca/services-payments/venues-facilities-bookings/booking-city-facilities/rentals-parties/">Spadina Museum</a> </li>
+                <li> <a target="_blank" href="https://thearlingtonestate.com/services/weddings/">The Arlington Estate</a> </li>
+                <li> <a target="_blank" href="https://www.distilleryevents.com/the-fermenting-cellar">The Fermenting Cellar</a> </li>
+                <li> <a target="_blank" href="https://www.omnihotels.com/hotels/toronto-king-edward/weddings">The Omni King Edward Hotel</a> </li>
+            </ul>
+        </div>
+    </div>
+        
+    <script src="script.js"></script> <!-- This links the html file to the Javascript file-->
+
+    <br>
+
+    <!-- 
+        This div will make up the top part of the legend, which sits right below the map.
+        Each venue type will have its corresponding colour dispalyed beside it.
+    -->
+    <div class="legendTop"> <!-- This set of items will be styled according to the .legendTop in CSS -->
+        <div>
+            <img src="https://www.colorhexa.com/9f7eec.png"> <!-- Embeds image into webpage -->
+        </div>
+
+        <div class="legendText"> <!-- Corresponding venue type -->
+            <p>Hotel</p>
+        </div>
+
+        <br>
+
+        <div>
+            <img src="https://www.colorhexa.com/f7a240.png">
+        </div>
+
+        <div class="legendText">
+            <p>Warehouse</p>
+        </div>
+
+        <br>
+
+        <div>
+            <img src="https://www.colorhexa.com/f8c8dc.png">
+        </div>
+
+        <div class="legendText">
+            <p>Historical</p>
+        </div>
+
+        <br>
+
+        <div>
+            <img src="https://www.colorhexa.com/38ad3a.png">
+        </div>
+
+        <div class="legendText">
+            <p>Outdoor</p>
+        </div>
+
+        <br>
+
+        <div>
+            <img src="https://www.colorhexa.com/ff4242.png">
+        </div>
+
+        <div class="legendText">
+            <p>Restaurant</p>
+        </div>
+
+        <br>
+
+        <div>
+            <img src="https://www.colorhexa.com/72c5ee.png">
+        </div>
+
+        <div class="legendText">
+            <p>Golf Club</p>
+        </div>           
+    </div>
+
+     <!-- 
+        This div will make up the bottom part of the legend, which sits right below the map.
+        Each venue type will have its corresponding colour dispalyed beside it.
+    -->
+    <div class="legendBottom"> <!-- This set of items will be styled according to the .legendBottom in CSS -->
+        <div>
+            <img src="https://www.colorhexa.com/f9ea4e.png">
+        </div>
+
+        <div class="legendText">
+            <p>Banquet Hall</p>
+        </div>
+        
+        <br>
+
+        <div>
+            <img src="https://www.colorhexa.com/16e9d1.png">
+        </div>
+
+        <div class="legendText">
+            <p>Art Gallery and Museum</p>
+        </div>
+
+        <br>
+
+        <div>
+            <img src="https://www.colorhexa.com/2e2af8.png">
+        </div>
+
+        <div class="legendText">
+            <p>Mansion</p>
+        </div>
+    </div>
+</body>
+</html>
